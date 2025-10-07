@@ -13,6 +13,7 @@ export default function NavBar(){
           <NavLink to="/" end className={({isActive}) => `nav-link ${isActive ? 'active':''}`}>Inicio</NavLink>
           <NavLink to="/nosotros" className={({isActive}) => `nav-link ${isActive ? 'active':''}`}>Nosotros</NavLink>
           <NavLink to="/productos" className={({isActive}) => `nav-link ${isActive ? 'active':''}`}>Productos</NavLink>
+          <NavLink to="/contacto" className={({isActive}) => `nav-link ${isActive ? 'active':''}`}>Contacto</NavLink>
         </div>
       </div>
     </nav>
