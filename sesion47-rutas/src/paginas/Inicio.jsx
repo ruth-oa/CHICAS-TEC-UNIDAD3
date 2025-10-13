@@ -1,5 +1,6 @@
 import { usuarios } from "../assets/usuarios";
 import { UserCard } from "../componentes/UserCard";
+import Comentarios from "../componentes/Comentarios";
 
 export function Inicio() {
   return (
@@ -27,6 +28,7 @@ export function Inicio() {
           />
         ))}
       </div>
+    
     </>
   );
 }
