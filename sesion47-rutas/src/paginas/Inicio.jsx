@@ -28,7 +28,7 @@ export function Inicio() {
           />
         ))}
       </div>
-    
+        <Comentarios/>
     </>
   );
 }

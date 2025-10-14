@@ -1,9 +1,11 @@
 // src/assets/Usuarios.jsx
+import andreImg from "./andre.jpeg";
+
 
 export const usuarios = [
   {
     id: 1,
-    imagen: "https://randomuser.me/api/portraits/men/32.jpg",
+    imagen: andreImg, 
     nombre: "Carlos Ramírez",
     cargo: "Desarrollador Frontend",
   },

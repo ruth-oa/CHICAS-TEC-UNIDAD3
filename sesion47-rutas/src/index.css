@@ -74,3 +74,29 @@ body {
 .dark-mode-example {
   @apply bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 p-4 rounded-lg;
 }
+
+
+
+/* 🌞 Tema claro */
+.theme-light {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 🌙 Tema oscuro */
+.theme-dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Aplicar a todas las páginas */
+body,
+.page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
