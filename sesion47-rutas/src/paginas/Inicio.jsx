@@ -1,6 +1,7 @@
 import { usuarios } from "../assets/usuarios";
 import { UserCard } from "../componentes/UserCard";
 import Comentarios from "../componentes/Comentarios";
+import { Link } from "react-router-dom";
 
 export function Inicio() {
   return (
@@ -15,6 +16,8 @@ export function Inicio() {
         sint reprehenderit. Odit vero alias odio, mollitia quo asperiores
         voluptate sapiente omnis.
       </p>
+
+      <Link to="/especial" target="_blank" >Formulario</Link>
 
       <h2 className="text-3xl font-bold text-blue-500 mb-6" >Equipo</h2>
 

@@ -1,44 +1,42 @@
 // src/App.jsx
 import "./App.css";
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Inicio } from "./paginas/Inicio";
 import Nosotros from "./paginas/Nosotros";
 import Productos from "./paginas/Productos";
 import { FormContacto } from "./paginas/Contacto";
-import NavBar from "./componentes/NavBar";
-import { Footer } from "./componentes/Footer";
 import Comentarios from "./componentes/Comentarios";
-import Modal from "./componentes/Modal";
-import { LoginForm } from "./componentes/LoginForm";
+import LayoutPrincipal from "./layouts/LayoutPrincipal"; // layout
 import { UserProvider } from "./context/UserContext";
-import { ThemeProvider } from "./context/ThemeContext"; // si tienes uno
+import { ThemeProvider } from "./context/ThemeContext";
+import LayoutVacio from "./layouts/LayoutVacio"
+import { Navigate } from "react-router-dom";
+import Especial from "./paginas/Especial";
 
 export default function App() {
-  const [loginOpen, setLoginOpen] = useState(false);
+return (
+    <>
 
-  return (
-    <ThemeProvider>
-      <UserProvider>
-        <NavBar onOpenLogin={() => setLoginOpen(true)} />
+      <Routes>
+        <Route element={<LayoutPrincipal />} >
+          <Route path='/' element={<Inicio />}></Route>
+          <Route path='/nosotros' element={<Nosotros />}></Route>
+          <Route path='/productos' element={<Productos />}></Route>
+          {/* <Route path='/productos/:id' element={<Detalle />}></Route> */}
+          <Route path='/contacto' element={<FormContacto />}></Route>
+        </Route>
 
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/contacto" element={<FormContacto />} />
-          <Route path="/comentarios" element={<Comentarios />} />
-        </Routes>
+        <Route element={<LayoutVacio />}>
+          <Route path="/especial" element={<Especial />} />
+        </Route>
 
-        <Footer />
-
-        <Modal open={loginOpen} onClose={() => setLoginOpen(false)}>
-          <LoginForm onSuccess={() => setLoginOpen(false)} />
-        </Modal>
-      </UserProvider>
-    </ThemeProvider>
+        {/* fallback */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   );
 }
+
 
 
 
